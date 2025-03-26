@@ -1,0 +1,32 @@
+Task List:
+===========================
+Title: Buy Groceries
+Description: Purchase milk, eggs, and bread
+Due Date: 2025-03-20
+Category: Personal
+Status: Completed
+---------------------------
+Title: Buy Groceries
+Description: Purchase milk, eggs, and bread
+Due Date: 2025-03-20
+Category: Personal
+Status: Pending
+---------------------------
+Title: Dance
+Description: Purchase milk, eggs, and bread
+Due Date: 2025-03-20
+Category: Personal
+Status: Completed
+---------------------------
+Title: Project
+Description: do project java
+Due Date: 2025-03-20
+Category: Personal
+Status: Completed
+---------------------------
+Title: test
+Description: test
+Due Date: 2025-03-20
+Category: Work
+Status: Pending
+---------------------------

@@ -1,0 +1,33 @@
+.button {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-min-width: 160px;
+    -fx-max-width: 160px;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color: #3B7DC2;
+}
+
+.combo-box {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-min-width: 160px;
+    -fx-max-width: 160px;
+    -fx-alignment: center;
+}
+
+.combo-box:hover {
+    -fx-background-color: #3B7DC2;
+}

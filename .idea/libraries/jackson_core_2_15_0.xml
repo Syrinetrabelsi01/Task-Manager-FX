@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jackson-core-2.15.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jackson-core-2.15.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-databind-2.15.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-annotations-2.15.0.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/javafx-sdk-24/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Downloads/javafx-sdk-24/lib" recursive="false" />
+  </library>
+</component>

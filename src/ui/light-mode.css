@@ -1,0 +1,58 @@
+.root {
+    -fx-background-color: #f4f4f4; 
+    -fx-text-fill: black;
+}
+
+.button {
+    -fx-background-color: linear-gradient(#ffffff, #e0e0e0);
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#f0f0f0, #dcdcdc);
+    -fx-border-color: black;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-table-cell-border-color: #eee;
+    -fx-padding: 5px;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d0e8ff;
+    -fx-text-fill: black;
+}
+
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-border-color: #ccc;
+}
+
+.combo-box:hover {
+    -fx-background-color: #f0f0f0;
+}

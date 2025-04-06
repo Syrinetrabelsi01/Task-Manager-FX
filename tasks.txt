@@ -1,32 +1,62 @@
 Task List:
 ===========================
-Title: Buy Groceries
-Description: Purchase milk, eggs, and bread
-Due Date: 2025-03-20
-Category: Personal
+Title: Finish JavaFX Project
+Description: Complete the final implementation of Task Manager.
+Due Date: 2025-03-25
+Category: Work
 Status: Completed
 ---------------------------
-Title: Buy Groceries
-Description: Purchase milk, eggs, and bread
+Title: Gym Workout
+Description: Leg day session at the gym.
 Due Date: 2025-03-20
 Category: Personal
 Status: Pending
 ---------------------------
-Title: Dance
-Description: Purchase milk, eggs, and bread
-Due Date: 2025-03-20
-Category: Personal
-Status: Completed
+Title: Study for Math Exam
+Description: Review all notes and practice exercises.
+Due Date: 2025-03-22
+Category: Study
+Status: Pending
 ---------------------------
-Title: Project
-Description: do project java
-Due Date: 2025-03-20
-Category: Personal
-Status: Completed
----------------------------
-Title: test
-Description: test
-Due Date: 2025-03-20
+Title: Prepare Presentation
+Description: Create slides for the project presentation.
+Due Date: 2025-03-24
 Category: Work
+Status: Completed
+---------------------------
+Title: Read a Book
+Description: Read at least 30 pages of a novel.
+Due Date: 2025-03-21
+Category: Personal
+Status: Pending
+---------------------------
+Title: Write Blog Post
+Description: Draft an article about JavaFX and MySQL.
+Due Date: 2025-03-23
+Category: Work
+Status: Pending
+---------------------------
+Title: Grocery Shopping
+Description: Buy essentials: eggs, milk, and fruits.
+Due Date: 2025-03-19
+Category: Personal
+Status: Completed
+---------------------------
+Title: Complete Database Integration
+Description: Connect MySQL to JavaFX and implement CRUD operations.
+Due Date: 2025-03-26
+Category: Work
+Status: Pending
+---------------------------
+Title: Watch SQL Tutorial
+Description: Learn advanced SQL joins and queries.
+Due Date: 2025-03-20
+Category: Study
+Status: Pending
+---------------------------
+Title: Plan Weekend Trip
+Description: Decide on destination and make reservations.
+Due Date: 2025-03-27
+Category: Personal
 Status: Pending
 ---------------------------

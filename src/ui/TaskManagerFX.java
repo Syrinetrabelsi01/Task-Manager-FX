@@ -40,7 +40,7 @@ public class TaskManagerFX extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Task Manager FX");
 
-        loadTasksFromFile();
+        //loadTasksFromFile();
 
         TableColumn<Task, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getTitle()));
@@ -80,7 +80,7 @@ public class TaskManagerFX extends Application {
         Button analyticsButton = createButton("Show Analytics", buttonWidth, e -> showAnalytics());
         Button downloadButton = createButton("Download Tasks", buttonWidth, e -> exportTasksToTextFile());
         Button exitButton = createButton("Exit", buttonWidth, e -> {
-            saveTasksToFile();
+            //saveTasksToFile();
             System.exit(0);
         });
 
@@ -185,38 +185,38 @@ public class TaskManagerFX extends Application {
         tableView.setItems(FXCollections.observableArrayList(filteredTasks));
     }
 
-    private void saveTasksToFile() {
-        File file = new File("tasks.json");
+//    private void saveTasksToFile() {
+//        File file = new File("tasks.json");
+//
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+//            String json = new Gson().toJson(taskManager.getAllTasks());
+//            writer.write(json);
+//        } catch (IOException e) {
+//            System.out.println("Error saving tasks: " + e.getMessage());
+//        }
+//    }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            String json = new Gson().toJson(taskManager.getAllTasks());
-            writer.write(json);
-        } catch (IOException e) {
-            System.out.println("Error saving tasks: " + e.getMessage());
-        }
-    }
-
-    private void loadTasksFromFile() {
-        File file = new File("tasks.json");
-        if (!file.exists() || file.length() == 0) {
-            System.out.println("No previous tasks found. Starting fresh.");
-            return;
-        }
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String json = reader.readLine();
-            if (json == null || json.isEmpty() || !json.startsWith("[") || !json.endsWith("]")) {
-                System.out.println("Invalid or empty task file. Skipping loading.");
-                return;
-            }
-
-            List<Task> loadedTasks = new Gson().fromJson(json, new TypeToken<List<Task>>() {}.getType());
-            taskManager.setTasks(loadedTasks);
-            updateTable();
-        } catch (IOException e) {
-            System.out.println("Error loading tasks: " + e.getMessage());
-        }
-    }
+//    private void loadTasksFromFile() {
+//        File file = new File("tasks.json");
+//        if (!file.exists() || file.length() == 0) {
+//            System.out.println("No previous tasks found. Starting fresh.");
+//            return;
+//        }
+//
+//        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+//            String json = reader.readLine();
+//            if (json == null || json.isEmpty() || !json.startsWith("[") || !json.endsWith("]")) {
+//                System.out.println("Invalid or empty task file. Skipping loading.");
+//                return;
+//            }
+//
+//            List<Task> loadedTasks = new Gson().fromJson(json, new TypeToken<List<Task>>() {}.getType());
+//            taskManager.setTasks(loadedTasks);
+//            updateTable();
+//        } catch (IOException e) {
+//            System.out.println("Error loading tasks: " + e.getMessage());
+//        }
+//    }
 
     private void addTask() {
         TextInputDialog dialog = new TextInputDialog();

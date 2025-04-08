@@ -115,7 +115,8 @@ public class TaskManagerFX extends Application {
     }
 
     private void showCategoryPieChart() {
-        List<Task> allTasks = taskManager.getAllTasks();
+        List<Task> allTasks = DatabaseManager.getTasks();
+
         Map<String, Long> categoryCounts = allTasks.stream()
                 .collect(Collectors.groupingBy(Task::getCategory, Collectors.counting()));
 
@@ -124,6 +125,11 @@ public class TaskManagerFX extends Application {
                 new PieChart.Data("Work", categoryCounts.getOrDefault("Work", 0L)),
                 new PieChart.Data("Study", categoryCounts.getOrDefault("Study", 0L))
         );
+
+        if (pieChartData.stream().allMatch(data -> data.getPieValue() == 0)) {
+            showAlert("No task data available to display chart.");
+            return;
+        }
 
         PieChart pieChart = new PieChart(pieChartData);
         pieChart.setTitle("Task Categories");
@@ -137,6 +143,7 @@ public class TaskManagerFX extends Application {
         chartStage.setScene(chartScene);
         chartStage.show();
     }
+
 
     private void filterByCategory(String category) {
         List<Task> filteredTasks = category.equals("All")

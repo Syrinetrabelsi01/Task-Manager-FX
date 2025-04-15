@@ -16,7 +16,7 @@ Title: Study for Math Exam
 Description: Review all notes and practice exercises.
 Due Date: 2025-03-22
 Category: Study
-Status: Pending
+Status: Completed
 ---------------------------
 Title: Prepare Presentation
 Description: Create slides for the project presentation.
@@ -58,5 +58,17 @@ Title: Plan Weekend Trip
 Description: Decide on destination and make reservations.
 Due Date: 2025-03-27
 Category: Personal
+Status: Pending
+---------------------------
+Title: test
+Description: test
+Due Date: 2025-03-20
+Category: Personal
+Status: Pending
+---------------------------
+Title: test2
+Description: test2dzjbfjzefbee
+Due Date: 2025-07-20
+Category: Study
 Status: Pending
 ---------------------------

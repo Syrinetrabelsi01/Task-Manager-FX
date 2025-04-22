@@ -1,22 +1,25 @@
+/* Styling for JavaFX buttons */
 .button {
-    -fx-background-color: #4A90E2;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-padding: 8px 20px;
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
-    -fx-cursor: hand;
-    -fx-min-width: 160px;
+    -fx-background-color: #4A90E2;           /* Primary background color */
+    -fx-text-fill: white;                    /* White text color */
+    -fx-font-size: 14px;                     /* Font size for readability */
+    -fx-padding: 8px 20px;                   /* Inner spacing for a cleaner look */
+    -fx-border-radius: 10px;                 /* Rounded corners (border) */
+    -fx-background-radius: 10px;             /* Rounded corners (background) */
+    -fx-cursor: hand;                        /* Hand cursor on hover */
+    -fx-min-width: 160px;                    /* Consistent button width */
     -fx-max-width: 160px;
-    -fx-alignment: center;
+    -fx-alignment: center;                   /* Center-align content */
 }
 
+/* Button hover effect for interactivity */
 .button:hover {
-    -fx-background-color: #3B7DC2;
+    -fx-background-color: #3B7DC2;           /* Darker shade on hover */
 }
 
+/* Styling for dropdown ComboBox */
 .combo-box {
-    -fx-background-color: #4A90E2;
+    -fx-background-color: #4A90E2;           /* Same styling as button for consistency */
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-padding: 8px 20px;
@@ -28,6 +31,7 @@
     -fx-alignment: center;
 }
 
+/* Hover effect for ComboBox */
 .combo-box:hover {
     -fx-background-color: #3B7DC2;
 }

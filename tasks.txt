@@ -28,7 +28,7 @@ Title: Read a Book
 Description: Read at least 30 pages of a novel.
 Due Date: 2025-03-21
 Category: Personal
-Status: Pending
+Status: Completed
 ---------------------------
 Title: Write Blog Post
 Description: Draft an article about JavaFX and MySQL.
@@ -64,11 +64,5 @@ Title: test
 Description: test
 Due Date: 2025-03-20
 Category: Personal
-Status: Pending
----------------------------
-Title: test2
-Description: test2dzjbfjzefbee
-Due Date: 2025-07-20
-Category: Study
 Status: Pending
 ---------------------------

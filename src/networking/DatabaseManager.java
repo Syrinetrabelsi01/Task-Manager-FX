@@ -7,12 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Task;
 
+// Manages all database operations using JDBC
 public class DatabaseManager {
 
+    // Establishes a connection to the MySQL database
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/task_manager?serverTimezone=UTC&useSSL=false", "root", "");
     }
 
+    // Inserts a new task into the database
     public static void insertTask(String title, String description, String dueDate, String category, String status) {
         String sql = "INSERT INTO tasks (title, description, due_date, category, status) VALUES (?, ?, ?, ?, ?)";
 
@@ -34,10 +37,12 @@ public class DatabaseManager {
             }
 
         } catch (SQLException e) {
+            // Handles SQL-related exceptions
             System.out.println("SQL Error: " + e.getMessage());
         }
     }
 
+    // Retrieves all tasks from the database
     public static List<Task> getTasks() {
         List<Task> tasks = new ArrayList<>();
         String sql = "SELECT * FROM tasks";
@@ -52,6 +57,7 @@ public class DatabaseManager {
                     status = "Pending";
                 }
 
+                // Parses and constructs a Task object from database fields
                 Task task = new Task(
                         rs.getInt("id"),
                         rs.getString("title"),
@@ -72,11 +78,13 @@ public class DatabaseManager {
         return tasks;
     }
 
+    // Helper method to shorten long strings (used internally)
     private static String truncateString(String str, int length) {
         if (str == null) return "";
         return (str.length() > length) ? str.substring(0, length - 3) + "..." : str;
     }
 
+    // Updates a single column of a task by ID
     public static void updateTask(int taskId, String column, String newValue) {
         String sql = "UPDATE tasks SET " + column + " = ? WHERE id = ?";
 
@@ -98,6 +106,7 @@ public class DatabaseManager {
         }
     }
 
+    // Specifically updates task status field
     public static void updateTaskStatus(int taskId, String newStatus) {
         String sql = "UPDATE tasks SET status = ? WHERE id = ?";
 
@@ -119,6 +128,7 @@ public class DatabaseManager {
         }
     }
 
+    // Deletes a task from the database by ID
     public static void deleteTask(int taskId) {
         String sql = "DELETE FROM tasks WHERE id = ?";
 

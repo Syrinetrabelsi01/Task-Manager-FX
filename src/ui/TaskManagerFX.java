@@ -1,3 +1,13 @@
+/*
+ This class integrates key CS202 concepts:
+ - JavaFX for GUI design
+ - JDBC for MySQL database interaction
+ - Java Collections and Streams for filtering/sorting
+ - File handling for task export
+ - CSS styling
+ - Event-driven programming with modular MVC structure
+*/
+
 package ui;
 
 import javafx.event.ActionEvent;
@@ -27,6 +37,7 @@ import javafx.stage.Stage;
 import model.Task;
 import model.TaskManager;
 
+// Entry point for the JavaFX application
 public class TaskManagerFX extends Application {
     private TaskManager taskManager = new TaskManager();
     private TableView<Task> tableView = new TableView<>();
@@ -36,12 +47,14 @@ public class TaskManagerFX extends Application {
         launch(args);
     }
 
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Task Manager FX");
 
         //loadTasksFromFile();
 
+        // Loads tasks and initializes the JavaFX TableView with task properties
         TableColumn<Task, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getTitle()));
 
@@ -64,11 +77,13 @@ public class TaskManagerFX extends Application {
 
         ComboBox<String> categoryFilter = new ComboBox<>();
         categoryFilter.getStyleClass().add("combo-box");
+        // GUI Styling with CSS integration
         categoryFilter.getItems().addAll("All", "Personal", "Work", "Study");
         categoryFilter.setValue("All");
         categoryFilter.setOnAction(e -> filterByCategory(categoryFilter.getValue()));
         categoryFilter.setMinWidth(buttonWidth);
 
+        // Creates functional buttons with assigned event handlers
         Button addButton = createButton("Add Task", buttonWidth, e -> addTask());
         Button removeButton = createButton("Remove Task", buttonWidth, e -> removeTask());
         Button editButton = createButton("Edit Task", buttonWidth, e -> editTask());
@@ -84,6 +99,8 @@ public class TaskManagerFX extends Application {
             System.exit(0);
         });
 
+
+        // UI components arranged with VBox, HBox, and BorderPane
         VBox taskButtons = new VBox(10, addButton, removeButton, editButton, completeButton);
         taskButtons.setAlignment(Pos.CENTER_LEFT);
 
@@ -115,6 +132,7 @@ public class TaskManagerFX extends Application {
     }
 
     private void showCategoryPieChart() {
+        // Uses PieChart to visualize task categories
         List<Task> allTasks = DatabaseManager.getTasks();
 
         Map<String, Long> categoryCounts = allTasks.stream()
@@ -146,6 +164,7 @@ public class TaskManagerFX extends Application {
 
 
     private void filterByCategory(String category) {
+        // Filtering tasks using Java Streams
         List<Task> filteredTasks = category.equals("All")
                 ? DatabaseManager.getTasks()
                 : DatabaseManager.getTasks().stream()
@@ -156,6 +175,7 @@ public class TaskManagerFX extends Application {
     }
 
     private void showSortedTasks() {
+        // Sorting tasks by due date using Comparator
         List<Task> sortedTasks = DatabaseManager.getTasks().stream()
                 .sorted(Comparator.comparing(Task::getDueDate))
                 .collect(Collectors.toList());
@@ -364,12 +384,14 @@ public class TaskManagerFX extends Application {
     }
 
     private void updateTable() {
+        // Fetches tasks from MySQL using JDBC connection
         List<Task> tasks = DatabaseManager.getTasks();
         tableView.getItems().clear();
         tableView.setItems(FXCollections.observableArrayList(tasks));
     }
 
     private void markTaskAsCompleted() {
+        // Updating task status via user interaction
         Task selectedTask = tableView.getSelectionModel().getSelectedItem();
         if (selectedTask == null) {
             showAlert("Please select a task to mark as completed.");
@@ -381,6 +403,7 @@ public class TaskManagerFX extends Application {
     }
 
     private void showAnalytics() {
+        // Generates completion statistics using filtering and percentage calculation
         List<Task> allTasks = DatabaseManager.getTasks();
 
         long completedTasks = allTasks.stream().filter(task -> "Completed".equalsIgnoreCase(task.getStatus())).count();
@@ -408,6 +431,7 @@ public class TaskManagerFX extends Application {
     }
 
     private void exportTasksToTextFile() {
+        // Exports tasks to a local .txt file
         List<Task> tasks = DatabaseManager.getTasks();
         if (tasks.isEmpty()) {
             showAlert("No tasks available to download.");
